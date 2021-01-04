@@ -7,7 +7,7 @@ namespace POO_Produtos.classes
     {
         int Codigo { get; set; }
         
-        string NomeMarca { get; set; }
+        public string NomeMarca { get; set; }
         
         DateTime DataCadastro { get; set; }
         

@@ -12,7 +12,7 @@ namespace POO_Produtos.classes
         public Marca Marca { get; set; }
         public Usuario CadastradoPor { get; set; }
         public List<Produto> ListaDeProduto { get; set; }
-        
+
         public void Cadastrar(){
             Produto novoProduto = new Produto();
 
@@ -29,16 +29,30 @@ namespace POO_Produtos.classes
 
             Marca = Marca.CadastrarMarca();
 
-            CadastradoPor = new Usuario();
+            novoProduto.CadastradoPor = new Usuario();
+
+            ListaDeProduto.Add(novoProduto);
             
         }
         
         public void Listar(){
 
+            Console.ForegroundColor = ConsoleColor.Green;
+            foreach (var item in ListaDeProduto){
+                Console.WriteLine($"Código {item.Codigo}");
+                Console.WriteLine($"Produto {item.NomeProduto}");
+                Console.WriteLine($"Preço R$ {item.Preco}");
+                Console.WriteLine($"Data de cadastro {item.DataCadastro}");
+                Console.WriteLine($"Marca {item.Marca}");
+
+
+            }
+            Console.ResetColor();
         }
         
         public void Deletar(int cod){
-
+            Produto prodDelete = ListaDeProduto.Find(p => p.Codigo == cod);
+            ListaDeProduto.Remove(prodDelete);
         }
 
     }

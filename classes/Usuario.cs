@@ -19,8 +19,8 @@ namespace POO_Produtos.classes
 
         int Codigo { get; set; }
         string Nome { get; set; }
-        string Email { get; set; }
-        string Senha { get; set; }
+        public string Email { get; set; }
+        public string Senha { get; set; }
         DateTime DataCadastro { get; set; }
         
 
